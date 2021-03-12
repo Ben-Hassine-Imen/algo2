@@ -1,0 +1,44 @@
+ ALGORITHM Problème 1 _ solution 1
+
+ 
+ VAR
+ s1,s2: ARRAY_OF integer[];
+ sum,i,j:integer;
+
+ BEGIN
+     write("entrer l'ensemble_1: ")
+     write("entrer l'ensemble_2: ")
+     read(s1)
+     read(s2)
+    
+
+  
+   // tout d'abord nous comparons chaque élément de l'ensemble_1 u avec le deuxième ensemble(ensemble_2) et si l'élément n'est pas présent, ajoutez cet élément à la somme. Ensuite, faisons l'inverse pour ajouter des éléments du deuxième ensemble.
+
+    sum=0
+FOR i FROM 0 TO   s1.length-1 STEP step  DO
+FOR j FROM 0 TO   s2.length-1 STEP step  DO
+
+    IF (s1[i]<>s2[j] ) THEN
+    
+            sum=sum+s1[i]
+         
+       END_IF
+
+    END_FOR
+END_FOR
+
+FOR j FROM 0 TO    s2.length-1 STEP step  DO
+FOR i FROM 0 TO    s1.length-1 STEP step  DO
+
+    IF (s2[j]<>s1[i] ) THEN
+            sum=sum+s2[j]
+       END_IF
+
+    END_FOR
+ END_FOR
+ 
+ write('la somme des éléments distincts est:',sum)
+  END Problème 1 _ solution 1
+
+

@@ -1,0 +1,42 @@
+ AlGORITHM broblème 1 solution 2
+
+ VAR
+ ensemble_1,ensemble_2:ARRAY_OF integer[];
+   ensemble : ARRAY_OF integer[];
+   htab : HASH_TABLE<INTEGER,integer>;
+     htab : HASH_TABLE<integer,integer>;
+   i,count,sum : INTEGER;
+
+   BEGIN
+
+     write("entrer l'ensemble_1: ")
+     write("entrer l'ensemble_2: ")
+     read(s1)
+     read(s2)
+   s=s1.Concat(s2)
+   
+
+   // tout d'abord nous parcourons les ensembles pour définir le nombre de chaque entier.
+
+   FOR i FROM 0 TO s.length-1 STEP 1  DO
+       IF (htab.lookup(s[i]) = TRUE) THEN
+           count := htab.get(s[i]);
+           htab.insert(s[i],count+1);
+       ELSE
+           htab.insert(s[i],1);
+       END_IF
+   END_FOR
+  
+// Maintenant, nous bouclons la table de hachage pour caluler la somme éléments distincts.
+ sum=0
+   FOR i FROM 0 TO s.length-1 STEP 1  DO
+       IF (htab.get(s[i]) = 1) THEN
+       sum=sum+s[i];
+      
+         
+       END_IF
+   END_FOR
+
+   Write('la somme des éléments distincts est:',sum);
+
+END broblème 1 solution 2
